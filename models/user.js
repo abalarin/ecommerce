@@ -18,10 +18,11 @@ const userSchema = mongoose.Schema({
   lastName: {
     type: String,
     required: true
-  }
+  },
   accountType: {
     type: String
-  }
+  },
+  listings: []
 });
 
 const User = module.exports = mongoose.model("EcommUser", userSchema);
