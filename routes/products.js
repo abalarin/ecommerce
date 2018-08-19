@@ -9,6 +9,11 @@ router.post('/create', (req, res) => {
   res.send("Build out create");
 });
 
+// Delete Listing
+router.post('/delete', (req, res) => {
+  res.send("Build out del");
+});
+
 // Find Lisiting
 router.get('/find', (req, res) => {
   res.send("Build out get");
