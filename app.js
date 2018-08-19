@@ -7,13 +7,13 @@ const mongoose = require("mongoose");
 const config = require("./config/database")
 const users = require("./routes/users")
 
-// mongoose.connect(config.database);
-// mongoose.connection.on("connected", () => {
-//   console.log("Connected to db" + config.database);
-// });
-// mongoose.connection.on("error", (err) => {
-//   console.log("DB error: " + err);
-// });
+mongoose.connect(config.database);
+mongoose.connection.on("connected", () => {
+  console.log("Connected to db" + config.database);
+});
+mongoose.connection.on("error", (err) => {
+  console.log("DB error: " + err);
+});
 
 const app = express();
 

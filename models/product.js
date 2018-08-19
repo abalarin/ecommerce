@@ -6,7 +6,6 @@ const listingSchema = mongoose.Schema({
   owner: {
     type: String,
     required: true
-
   },
   productType: {
     type: String,
