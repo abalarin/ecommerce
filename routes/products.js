@@ -9,7 +9,7 @@ router.post('/create', (req, res) => {
   res.send("Build out create");
 });
 
-// Delete Listing
+// Delete List
 router.post('/delete', (req, res) => {
   res.send("Build out del");
 });
