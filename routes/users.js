@@ -28,7 +28,22 @@ router.post('/register', (req, res) => {
 
 // Delete User
 router.post('/delete', (req, res) => {
-  res.send("Build out delete");
+  let user = new User({
+    email: req.body.email,
+    username: req.body.username,
+    password: req.body.password,
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
+    accountType: req.body.accountType
+  });
+
+  User.deleteUser(user, (err, user) => {
+    if (err){
+      res.json({success: false, msg: "Failed to remove user."});
+    } else {
+      res.json({success: true, msg: "User removed"});
+    }
+  });
 });
 
 //Authenticate User

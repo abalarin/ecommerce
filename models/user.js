@@ -48,19 +48,9 @@ module.exports.addUser = function(newUser, callback){
   });
 }
 
-// module.exports.deleteUser = function(user, callback){
-//   User.getUserByEmail(user.email, (err, res) => {
-//     if(err) throw err;
-//     company.findOneAndUpdate(
-//        { companyLegalName : user.companyLegalName },
-//        { $pull: { employees : user.email } },
-//        (err, res) => {
-//          if(err) throw err;
-//        }
-//     );
-//     User.remove({_id: res._id}, callback);
-//   });
-// }
+module.exports.deleteUser = function(user, callback){
+  User.remove({_id: user._id}, callback);
+}
 
 module.exports.comparePassword = function(candidatePassword, hash, callback){
   bcrypt.compare(candidatePassword, hash, (err, isMatch) =>{
